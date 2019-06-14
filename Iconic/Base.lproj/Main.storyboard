@@ -70,6 +70,7 @@
                                         <connections>
                                             <outlet property="heading" destination="BYP-ar-BAy" id="MP9-Jk-wNy"/>
                                             <outlet property="subHeading" destination="3O4-n8-C8L" id="0oZ-ST-0A2"/>
+                                            <segue destination="gFa-0Z-r8L" kind="show" id="yjp-s7-cQX"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SCell" id="FLo-ls-6vV" customClass="SolidCell" customModule="Iconic" customModuleProvider="target">
@@ -142,6 +143,7 @@
                                         <connections>
                                             <outlet property="photoImageView" destination="mdO-8h-ydW" id="84Z-LK-Mjr"/>
                                             <outlet property="photoLabel" destination="2uY-lX-EmZ" id="uzG-5i-pvR"/>
+                                            <segue destination="ZVJ-fn-PWJ" kind="show" id="Dcs-Oy-E7K"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -165,10 +167,10 @@
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="115.84821428571428"/>
         </scene>
-        <!--Header View Controller Scene-->
+        <!--Iconic-->
         <scene sceneID="1mO-FF-s3d">
             <objects>
-                <viewController title="Header View Controller Scene" id="gFa-0Z-r8L" sceneMemberID="viewController">
+                <viewController title="Iconic" id="gFa-0Z-r8L" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KOw-Gk-SNZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -180,10 +182,10 @@
             </objects>
             <point key="canvasLocation" x="1851" y="-289"/>
         </scene>
-        <!--Solid View Controler Scene-->
+        <!--ColorName-->
         <scene sceneID="HEQ-ck-BVv">
             <objects>
-                <viewController title="Solid View Controler Scene" id="WJp-v3-oy3" sceneMemberID="viewController">
+                <viewController title="ColorName" id="WJp-v3-oy3" customClass="SolidColorViewController" customModule="Iconic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Mf-QV-CVH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -195,10 +197,10 @@
             </objects>
             <point key="canvasLocation" x="2642" y="116"/>
         </scene>
-        <!--Photo View Controller Scene-->
+        <!--PhotoName-->
         <scene sceneID="wpW-9i-qek">
             <objects>
-                <viewController title="Photo View Controller Scene" id="ZVJ-fn-PWJ" sceneMemberID="viewController">
+                <viewController title="PhotoName" id="ZVJ-fn-PWJ" customClass="PhotoViewController" customModule="Iconic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E87-hO-bqE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -170,11 +170,13 @@ extension BGListView: UITableViewDataSource, UITableViewDelegate
         {
             let cell = selectedCell as! SolidCell
             solidColorImage = cell.imageView?.image
+            solidColorName = cell.solidLabel.text!
         }
         else if(selectedCell is PhotoCell)
         {
             let cell = selectedCell as! PhotoCell
             photoImage = cell.imageView?.image
+            photoName = cell.photoLabel.text!
         }
     }
 }

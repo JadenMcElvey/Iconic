@@ -11,4 +11,6 @@ import UIKit
 
 let port = UInt(8080)
 var solidColorImage = UIImage(named: "SysBlackIcon")
+var solidColorName = ""
 var photoImage = UIImage(named: "Stock1")
+var photoName = ""
