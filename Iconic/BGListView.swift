@@ -92,6 +92,10 @@ class BGListView: UIViewController {
         let P13 = Photo(image: UIImage(named: "Stock13")!, name: "Stock Background 13")
         let P14 = Photo(image: UIImage(named: "Stock14")!, name: "Stock Background 14")
         let P15 = Photo(image: UIImage(named: "Stock15")!, name: "Stock Background 15")
+        let P16 = Photo(image: UIImage(named: "Stock16")!, name: "Stock Background 16")
+        let P17 = Photo(image: UIImage(named: "Stock17")!, name: "Stock Background 17")
+        let P18 = Photo(image: UIImage(named: "Stock18")!, name: "Stock Background 18")
+        let P19 = Photo(image: UIImage(named: "Stock19")!, name: "Stock Background 19")
         
         tempArray.append(P1)
         tempArray.append(P2)
@@ -108,6 +112,10 @@ class BGListView: UIViewController {
         tempArray.append(P13)
         tempArray.append(P14)
         tempArray.append(P15)
+        tempArray.append(P16)
+        tempArray.append(P17)
+        tempArray.append(P18)
+        tempArray.append(P19)
         
         return tempArray
     }
@@ -169,13 +177,13 @@ extension BGListView: UITableViewDataSource, UITableViewDelegate
         if(selectedCell is SolidCell)
         {
             let cell = selectedCell as! SolidCell
-            solidColorImage = cell.imageView?.image
+            solidColorImage = cell.solidImageView!.image
             solidColorName = cell.solidLabel.text!
         }
         else if(selectedCell is PhotoCell)
         {
             let cell = selectedCell as! PhotoCell
-            photoImage = cell.imageView?.image
+            photoImage = cell.photoImageView!.image
             photoName = cell.photoLabel.text!
         }
     }
