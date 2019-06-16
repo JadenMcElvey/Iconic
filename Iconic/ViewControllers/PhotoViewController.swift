@@ -104,11 +104,11 @@ class PhotoViewController: UIViewController
         let width = CGFloat(120 * screenScaler)
         
         let row1 = CGFloat(54 * screenScaler)
-        let row2 = CGFloat(228 * screenScaler)
-        let row3 = CGFloat(402 * screenScaler)
-        let row4 = CGFloat(576 * screenScaler)
-        let row5 = CGFloat(750 * screenScaler)
-        let row6 = CGFloat(924 * screenScaler)
+        let row2 = CGFloat(231 * screenScaler)
+        let row3 = CGFloat(408 * screenScaler)
+        let row4 = CGFloat(585 * screenScaler)
+        let row5 = CGFloat(759 * screenScaler)
+        let row6 = CGFloat(939 * screenScaler)
         let height = CGFloat(120 * screenScaler)
         
         //row
@@ -184,7 +184,12 @@ extension PhotoViewController: UICollectionViewDataSource, UICollectionViewDeleg
         
         return cell
     }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    {
+        let selectedCell = self.collectionView(self.collection, cellForItemAt: indexPath)
+        let cell = selectedCell as! PhotoTile
+        let urlString = hWrite.ServerReadyAndMakeBaseURL(img: cell.image.image!)
+        UIApplication.shared.open(URL(string: urlString)!)
         print(indexPath.item)
     }
 }

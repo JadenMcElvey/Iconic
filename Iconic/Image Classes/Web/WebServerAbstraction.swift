@@ -15,6 +15,11 @@ class WebServerAbstraction
     
     func setHTML(siteHTML: String)
     {
+        if(webServer.isRunning)
+        {
+            webServer.stop()
+        }
+        webServer.removeAllHandlers()
         webServer.addDefaultHandler(forMethod: "GET", request: GCDWebServerRequest.self, processBlock: {request in
             return GCDWebServerDataResponse(html: siteHTML)})
     }
@@ -23,4 +28,5 @@ class WebServerAbstraction
     {
         webServer.start(withPort: port, bonjourName: "GCD Web Server")
     }
+    
 }

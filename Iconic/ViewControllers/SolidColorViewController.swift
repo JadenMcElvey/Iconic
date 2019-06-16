@@ -8,15 +8,25 @@
 
 import UIKit
 
-class SolidColorViewController: UIViewController {
+class SolidColorViewController: UIViewController
+{
 
-    override func viewDidLoad() {
+    @IBOutlet var preview: UIImageView!
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         self.title = solidColorName
+        self.preview!.image = solidColorImage!
+        self.preview!.layer.cornerRadius = self.preview!.frame.size.height/3
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func AddToHomeScreen(_ sender: Any)
+    {
+        let urlString = hWrite.ServerReadyAndMakeBaseURL(img: preview.image!)
+        UIApplication.shared.open(URL(string: urlString)!)
+    }
+    
     /*
     // MARK: - Navigation
 

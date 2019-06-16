@@ -186,5 +186,6 @@ extension BGListView: UITableViewDataSource, UITableViewDelegate
             photoImage = cell.photoImageView!.image
             photoName = cell.photoLabel.text!
         }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

@@ -11,8 +11,7 @@ import UIKit
 
 class HTMLWriter
 {
-    static var image = UIImage()
-    let port = UInt(8080)
+    let wserver = WebServerAbstraction()
     
     let baseHTML = """
 <!DOCTYPE html>
@@ -48,27 +47,34 @@ class HTMLWriter
 </html>
 """
     
-    func imageToBase64(img: UIImage) -> String
+    private func imageToBase64(img: UIImage) -> String
     {
         var base64 = ""
         let imgData = UIImage.pngData(img)
         base64 = imgData()!.base64EncodedString()
-        print(base64)
         return base64
     }
     
-    func makeHTMLString() -> String
+    private func makeHTMLString(image: UIImage) -> String
     {
         let HTMLString = baseHTML
-        return HTMLString.replacingOccurrences(of: "homeScreenImage", with: imageToBase64(img: HTMLWriter.image))
+        let encodedImage = "data:image/png;base64," + imageToBase64(img: image)
+        return HTMLString.replacingOccurrences(of: "homeScreenImage", with: encodedImage)
     }
     
-    func makeBaseURL() -> String
+    func ServerReadyAndMakeBaseURL(img: UIImage) -> String
     {
+        //web server stuff
+        print("set")
+        wserver.setHTML(siteHTML: makeHTMLString(image: img))
+        print("start")
+        wserver.start()
+        //making URL
         let name = UIKit.UIDevice.current.name
         let lowerName = name.lowercased()
         let noSpaceLowerName = lowerName.replacingOccurrences(of: " ", with: "-")
         let urlString = "http://\(noSpaceLowerName).local:" + String(port)
+        port += 1
         return urlString
     }
 }

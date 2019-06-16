@@ -190,17 +190,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bUa-ay-tuf">
-                                <rect key="frame" x="117" y="121" width="162" height="162"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bUa-ay-tuf">
+                                <rect key="frame" x="107" y="138" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="0mE-NF-hWW"/>
+                                    <constraint firstAttribute="height" constant="200" id="Ciq-0P-vSf"/>
+                                </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trJ-fv-S3p">
+                                <rect key="frame" x="92" y="398" width="230" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="c9Y-tp-mRh"/>
+                                    <constraint firstAttribute="width" constant="230" id="vlX-z6-0Ui"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="21"/>
+                                <state key="normal" title="Add to Home Screen">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="AddToHomeScreen:" destination="WJp-v3-oy3" eventType="touchUpInside" id="JeJ-CJ-Rpc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="bUa-ay-tuf" firstAttribute="top" secondItem="rTy-mx-Dln" secondAttribute="top" constant="35" id="PjO-KX-gmO"/>
+                            <constraint firstItem="bUa-ay-tuf" firstAttribute="top" secondItem="rTy-mx-Dln" secondAttribute="top" constant="50" id="PjO-KX-gmO"/>
+                            <constraint firstItem="trJ-fv-S3p" firstAttribute="centerX" secondItem="3Mf-QV-CVH" secondAttribute="centerX" id="eTd-B3-PGr"/>
+                            <constraint firstItem="trJ-fv-S3p" firstAttribute="top" secondItem="bUa-ay-tuf" secondAttribute="bottom" constant="60" id="hGk-Xq-drS"/>
                             <constraint firstItem="bUa-ay-tuf" firstAttribute="centerX" secondItem="3Mf-QV-CVH" secondAttribute="centerX" id="wOg-Cm-kBJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rTy-mx-Dln"/>
                     </view>
+                    <connections>
+                        <outlet property="preview" destination="bUa-ay-tuf" id="qha-GK-dZh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jON-Q9-zMP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
