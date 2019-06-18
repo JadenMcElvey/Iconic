@@ -8,16 +8,27 @@
 
 import UIKit
 
-class BGListView: UIViewController {
+class BGListView: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var popup: UIView!
+    @IBOutlet var customBGName: UITextField!
+    @IBOutlet var popupBG: UIView!
     
     var solids: [Solid] = []
     var headings: [Header] = []
     var photos: [Photo] = []
+    
+    var tempImage = UIImage(named: "Stock19")
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        popupBG.isHidden = true
+        popup.layer.cornerRadius = popup.frame.size.height/6
+        
+        customBGName.delegate = self
         
         solids = createSolidArray()
         headings = createHeaderArray()
@@ -26,7 +37,58 @@ class BGListView: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        textField.resignFirstResponder()
+        return true
+    }
 
+    @IBAction func addImage(_ sender: Any)
+    {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        
+        picker.sourceType = UIImagePickerController.SourceType.photoLibrary
+        picker.allowsEditing = false
+        
+        self.present(picker, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any])
+    {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        {
+            tempImage = image
+            popupBG.isHidden = false
+        }
+        else
+        {
+            print("error")
+        }
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func addImageName(_ sender: Any)
+    {
+        let newP = Photo(image: tempImage!, name: customBGName.text!)
+        photos.append(newP)
+        tableView.reloadData()
+        popupBG.isHidden = true
+    }
+    
+    func createHeaderArray() -> [Header]
+    {
+        var tempArray: [Header] = []
+        
+        let H1 = Header(heading: "Iconic", subHeading: "Instructions and Purchases")
+        
+        tempArray.append(H1)
+        
+        return tempArray
+    }
+    
     func createSolidArray() -> [Solid]
     {
         var tempArray: [Solid] = []
@@ -58,17 +120,6 @@ class BGListView: UIViewController {
         tempArray.append(S11)
         tempArray.append(S12)
         tempArray.append(S13)
-        
-        return tempArray
-    }
-    
-    func createHeaderArray() -> [Header]
-    {
-        var tempArray: [Header] = []
-        
-        let H1 = Header(heading: "Iconic", subHeading: "Instructions and Purchases")
-        
-        tempArray.append(H1)
         
         return tempArray
     }
