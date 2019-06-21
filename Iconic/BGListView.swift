@@ -19,6 +19,7 @@ class BGListView: UIViewController, UINavigationControllerDelegate, UIImagePicke
     var headings: [Header] = []
     var photos: [Photo] = []
     var savedPhotos = SavingPhoto()
+    var protectedIndices = 0
     
     var tempImage = UIImage(named: "Stock19")
 
@@ -173,6 +174,7 @@ class BGListView: UIViewController, UINavigationControllerDelegate, UIImagePicke
         tempArray.append(P18)
         tempArray.append(P19)
         
+        protectedIndices = headings.count + solids.count + tempArray.count - 1
         for P in savedPhotos.photos
         {
             tempArray.append(P)
@@ -248,5 +250,28 @@ extension BGListView: UITableViewDataSource, UITableViewDelegate
             photoName = cell.photoLabel.text!
         }
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
+    {
+        if(indexPath.row <= protectedIndices)
+        {
+            return false
+        }
+        else
+        {
+            return true
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
+    {
+        if(editingStyle == .delete)
+        {
+            let customPhotosIndex = indexPath.row - protectedIndices - 1
+            savedPhotos.deleteImage(index: customPhotosIndex)
+            photos = createPhotoArray()
+            tableView.reloadData()
+        }
     }
 }

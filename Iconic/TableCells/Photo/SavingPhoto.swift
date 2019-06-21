@@ -19,22 +19,17 @@ class SavingPhoto
     
     func loadImages()
     {
-        print("hhhh")
+        photos.removeAll()
+        
         let array = defaults.stringArray(forKey: "ImgPaths")
-        print(array?.count)
-        print(photos.count)
         if array != nil
         {
             for P in array!
             {
-                print(P)
                 let filepath = getDocumentsDirectory().appendingPathComponent(P)
-                print(filepath.path)
                 let img = UIImage(contentsOfFile: filepath.path)
-                print(img)
                 let endFileName = filepath.lastPathComponent as NSString
                 let name = endFileName.deletingPathExtension as String
-                print(name)
                 
                 let P = Photo(image: img!, name: name)
                 photos.append(P)
@@ -53,6 +48,20 @@ class SavingPhoto
         
         let P = Photo(image: img, name: name)
         photos.append(P)
+    }
+    
+    func deleteImage(index: Int)
+    {
+        print("here")
+        var pathsArray = defaults.stringArray(forKey: "ImgPaths")
+        
+        let path = getDocumentsDirectory().appendingPathComponent(pathsArray![index])
+        try? FileManager.default.removeItem(atPath: path.absoluteString)
+        
+        pathsArray?.remove(at: index)
+        defaults.set(pathsArray, forKey: "ImgPaths")
+        
+        loadImages()
     }
     
     func getDocumentsDirectory() -> URL
