@@ -29,6 +29,7 @@
 		DA9742A222AF7078008D9221 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9742A122AF7078008D9221 /* Photo.swift */; };
 		DA9742A522B05583008D9221 /* WebServerAbstraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9742A422B05583008D9221 /* WebServerAbstraction.swift */; };
 		DA9742A722B055A8008D9221 /* GlobalVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9742A622B055A8008D9221 /* GlobalVars.swift */; };
+		DACA277F22BC63EA00CEBC15 /* SavingPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACA277E22BC63EA00CEBC15 /* SavingPhoto.swift */; };
 		DF3938187795DA84F9439DDD /* Pods_Iconic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAAB6623DFC53C84B3FCB2A0 /* Pods_Iconic.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		DA9742A122AF7078008D9221 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		DA9742A422B05583008D9221 /* WebServerAbstraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServerAbstraction.swift; sourceTree = "<group>"; };
 		DA9742A622B055A8008D9221 /* GlobalVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVars.swift; sourceTree = "<group>"; };
+		DACA277E22BC63EA00CEBC15 /* SavingPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingPhoto.swift; sourceTree = "<group>"; };
 		E73578416C258EAB25F76DAB /* Pods-Iconic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Iconic.release.xcconfig"; path = "Target Support Files/Pods-Iconic/Pods-Iconic.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -198,6 +200,7 @@
 			children = (
 				DA97429F22AF706D008D9221 /* PhotoCell.swift */,
 				DA9742A122AF7078008D9221 /* Photo.swift */,
+				DACA277E22BC63EA00CEBC15 /* SavingPhoto.swift */,
 			);
 			path = Photo;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				DA7D736722B4781900E5254B /* PhotoTile.swift in Sources */,
 				DA9742A222AF7078008D9221 /* Photo.swift in Sources */,
 				DA97429D22AF45FE008D9221 /* Header.swift in Sources */,
+				DACA277F22BC63EA00CEBC15 /* SavingPhoto.swift in Sources */,
 				DA7D735E22B35F0800E5254B /* SolidColorViewController.swift in Sources */,
 				DA9742A022AF706D008D9221 /* PhotoCell.swift in Sources */,
 				DA97429322AEFEF7008D9221 /* SolidCell.swift in Sources */,
@@ -491,6 +495,7 @@
 			baseConfigurationReference = D3B41E3C414B5E0EFB0BA5E6 /* Pods-Iconic.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XH785P3H39;
 				INFOPLIST_FILE = Iconic/Info.plist;
@@ -500,6 +505,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Test.Iconic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -510,6 +516,7 @@
 			baseConfigurationReference = E73578416C258EAB25F76DAB /* Pods-Iconic.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XH785P3H39;
 				INFOPLIST_FILE = Iconic/Info.plist;
@@ -519,6 +526,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Test.Iconic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

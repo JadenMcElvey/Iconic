@@ -18,12 +18,14 @@ class BGListView: UIViewController, UINavigationControllerDelegate, UIImagePicke
     var solids: [Solid] = []
     var headings: [Header] = []
     var photos: [Photo] = []
+    var savedPhotos = SavingPhoto()
     
     var tempImage = UIImage(named: "Stock19")
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        savedPhotos.loadImages()
         
         popupBG.isHidden = true
         popup.layer.cornerRadius = popup.frame.size.height/6
@@ -72,11 +74,14 @@ class BGListView: UIViewController, UINavigationControllerDelegate, UIImagePicke
     
     @IBAction func addImageName(_ sender: Any)
     {
-        let newP = Photo(image: tempImage!, name: customBGName.text!)
-        photos.append(newP)
+        savedPhotos.saveImage(img: tempImage!, name: customBGName.text!)
+        customBGName.text = ""
+        photos = createPhotoArray()
         tableView.reloadData()
         popupBG.isHidden = true
     }
+    
+    
     
     func createHeaderArray() -> [Header]
     {
@@ -167,6 +172,11 @@ class BGListView: UIViewController, UINavigationControllerDelegate, UIImagePicke
         tempArray.append(P17)
         tempArray.append(P18)
         tempArray.append(P19)
+        
+        for P in savedPhotos.photos
+        {
+            tempArray.append(P)
+        }
         
         return tempArray
     }
