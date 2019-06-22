@@ -29,7 +29,9 @@ class SavingPhoto
                 let filepath = getDocumentsDirectory().appendingPathComponent(P)
                 let img = UIImage(contentsOfFile: filepath.path)
                 let endFileName = filepath.lastPathComponent as NSString
-                let name = endFileName.deletingPathExtension as String
+                var name = endFileName.deletingPathExtension as String
+                name.removeLast(10)
+                print(name)
                 
                 let P = Photo(image: img!, name: name)
                 photos.append(P)
@@ -39,8 +41,12 @@ class SavingPhoto
     
     func saveImage(img: UIImage, name: String)
     {
+        let t = Int(Date().timeIntervalSince1970.rounded())
+        let fileEndString = String(t) + ".jpeg"
+        
         let data = img.jpegData(compressionQuality: 1)
-        let filename = name + ".jpeg"
+        let filename = name + fileEndString
+        print(filename)
         let filepath = getDocumentsDirectory().appendingPathComponent(filename)
         try? data?.write(to: filepath)
         pathsArray.add(filename)
@@ -52,7 +58,6 @@ class SavingPhoto
     
     func deleteImage(index: Int)
     {
-        print("here")
         var pathsArray = defaults.stringArray(forKey: "ImgPaths")
         
         let path = getDocumentsDirectory().appendingPathComponent(pathsArray![index])
