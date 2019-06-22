@@ -31,7 +31,6 @@ class SavingPhoto
                 let endFileName = filepath.lastPathComponent as NSString
                 var name = endFileName.deletingPathExtension as String
                 name.removeLast(10)
-                print(name)
                 
                 let P = Photo(image: img!, name: name)
                 photos.append(P)
@@ -46,7 +45,6 @@ class SavingPhoto
         
         let data = img.jpegData(compressionQuality: 1)
         let filename = name + fileEndString
-        print(filename)
         let filepath = getDocumentsDirectory().appendingPathComponent(filename)
         try? data?.write(to: filepath)
         pathsArray.add(filename)
