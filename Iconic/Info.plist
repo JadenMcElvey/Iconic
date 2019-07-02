@@ -26,6 +26,8 @@
 	<string>Main</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Required to import your own wallpaper</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Required to save wallpaper</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

@@ -27,6 +27,13 @@ class PhotoViewController: UIViewController
         collection.dataSource = self
         // Do any additional setup after loading the view.
     }
+    @IBAction func saveTapped(_ sender: Any)
+    {
+        UIImageWriteToSavedPhotosAlbum(photoImage!, self, #selector(image) ,nil)
+    }
+    
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer)
+    {}
     
     func createTileArray() -> [UIImage]
     {
