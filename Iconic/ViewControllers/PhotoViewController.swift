@@ -90,26 +90,62 @@ class PhotoViewController: UIViewController
     func getCGRects() -> [CGRect]
     {
         var rectArray: [CGRect] = []
-        var screenScaler: Float = 1
         
-        if(UIScreen.main.scale == 3.0)
+        var device = UIDevice.current.name
+        device = device.lowercased()
+        
+        if(device.firstIndex(of: "x") == nil)
         {
-            screenScaler = 1.44
+            if(device.contains("plus"))
+            {
+                print("plus")
+                rectArray = plusSeries()
+            }
+            else
+            {
+                print("norm")
+                rectArray = standardSeries()
+            }
+        }
+        else
+        {
+            if(device.contains("ʀ"))
+            {
+                print("r")
+                rectArray = xr()
+            }
+            else if(device.contains("max"))
+            {
+                print("max")
+                rectArray = xsmax()
+            }
+            else
+            {
+                print("x/xs")
+                rectArray = xandxsSeries()
+            }
         }
         
-        let col1 = CGFloat(54 * screenScaler)
-        let col2 = CGFloat(228 * screenScaler)
-        let col3 = CGFloat(402 * screenScaler)
-        let col4 = CGFloat(576 * screenScaler)
-        let width = CGFloat(120 * screenScaler)
+        return rectArray
+    }
+    
+    func standardSeries() -> [CGRect]
+    {
+        var standardSeriesArray: [CGRect] = []
         
-        let row1 = CGFloat(54 * screenScaler)
-        let row2 = CGFloat(231 * screenScaler)
-        let row3 = CGFloat(408 * screenScaler)
-        let row4 = CGFloat(585 * screenScaler)
-        let row5 = CGFloat(759 * screenScaler)
-        let row6 = CGFloat(939 * screenScaler)
-        let height = CGFloat(120 * screenScaler)
+        let col1 = CGFloat(54)
+        let col2 = CGFloat(228)
+        let col3 = CGFloat(402)
+        let col4 = CGFloat(576)
+        let width = CGFloat(120)
+        
+        let row1 = CGFloat(56)
+        let row2 = CGFloat(232)
+        let row3 = CGFloat(408)
+        let row4 = CGFloat(584)
+        let row5 = CGFloat(760)
+        let row6 = CGFloat(936)
+        let height = CGFloat(120)
         
         //row
         let r1c1 = CGRect(x: col1, y: row1, width: width, height: height)
@@ -142,32 +178,340 @@ class PhotoViewController: UIViewController
         let r6c3 = CGRect(x: col3, y: row6, width: width, height: height)
         let r6c4 = CGRect(x: col4, y: row6, width: width, height: height)
         
-        rectArray.append(r1c1)
-        rectArray.append(r1c2)
-        rectArray.append(r1c3)
-        rectArray.append(r1c4)
-        rectArray.append(r2c1)
-        rectArray.append(r2c2)
-        rectArray.append(r2c3)
-        rectArray.append(r2c4)
-        rectArray.append(r3c1)
-        rectArray.append(r3c2)
-        rectArray.append(r3c3)
-        rectArray.append(r3c4)
-        rectArray.append(r4c1)
-        rectArray.append(r4c2)
-        rectArray.append(r4c3)
-        rectArray.append(r4c4)
-        rectArray.append(r5c1)
-        rectArray.append(r5c2)
-        rectArray.append(r5c3)
-        rectArray.append(r5c4)
-        rectArray.append(r6c1)
-        rectArray.append(r6c2)
-        rectArray.append(r6c3)
-        rectArray.append(r6c4)
+        standardSeriesArray.append(r1c1)
+        standardSeriesArray.append(r1c2)
+        standardSeriesArray.append(r1c3)
+        standardSeriesArray.append(r1c4)
+        standardSeriesArray.append(r2c1)
+        standardSeriesArray.append(r2c2)
+        standardSeriesArray.append(r2c3)
+        standardSeriesArray.append(r2c4)
+        standardSeriesArray.append(r3c1)
+        standardSeriesArray.append(r3c2)
+        standardSeriesArray.append(r3c3)
+        standardSeriesArray.append(r3c4)
+        standardSeriesArray.append(r4c1)
+        standardSeriesArray.append(r4c2)
+        standardSeriesArray.append(r4c3)
+        standardSeriesArray.append(r4c4)
+        standardSeriesArray.append(r5c1)
+        standardSeriesArray.append(r5c2)
+        standardSeriesArray.append(r5c3)
+        standardSeriesArray.append(r5c4)
+        standardSeriesArray.append(r6c1)
+        standardSeriesArray.append(r6c2)
+        standardSeriesArray.append(r6c3)
+        standardSeriesArray.append(r6c4)
         
-        return rectArray
+        return standardSeriesArray
+    }
+    
+    func plusSeries() -> [CGRect]
+    {
+        var plusSeriesArray: [CGRect] = []
+        
+        let col1 = CGFloat(105)
+        let col2 = CGFloat(389)
+        let col3 = CGFloat(673)
+        let col4 = CGFloat(957)
+        let width = CGFloat(180)
+        
+        let row1 = CGFloat(114)
+        let row2 = CGFloat(414)
+        let row3 = CGFloat(714)
+        let row4 = CGFloat(1014)
+        let row5 = CGFloat(1314)
+        let row6 = CGFloat(1614)
+        let height = CGFloat(180)
+        
+        //row
+        let r1c1 = CGRect(x: col1, y: row1, width: width, height: height)
+        let r1c2 = CGRect(x: col2, y: row1, width: width, height: height)
+        let r1c3 = CGRect(x: col3, y: row1, width: width, height: height)
+        let r1c4 = CGRect(x: col4, y: row1, width: width, height: height)
+        //row2
+        let r2c1 = CGRect(x: col1, y: row2, width: width, height: height)
+        let r2c2 = CGRect(x: col2, y: row2, width: width, height: height)
+        let r2c3 = CGRect(x: col3, y: row2, width: width, height: height)
+        let r2c4 = CGRect(x: col4, y: row2, width: width, height: height)
+        //row3
+        let r3c1 = CGRect(x: col1, y: row3, width: width, height: height)
+        let r3c2 = CGRect(x: col2, y: row3, width: width, height: height)
+        let r3c3 = CGRect(x: col3, y: row3, width: width, height: height)
+        let r3c4 = CGRect(x: col4, y: row3, width: width, height: height)
+        //row4
+        let r4c1 = CGRect(x: col1, y: row4, width: width, height: height)
+        let r4c2 = CGRect(x: col2, y: row4, width: width, height: height)
+        let r4c3 = CGRect(x: col3, y: row4, width: width, height: height)
+        let r4c4 = CGRect(x: col4, y: row4, width: width, height: height)
+        //row5
+        let r5c1 = CGRect(x: col1, y: row5, width: width, height: height)
+        let r5c2 = CGRect(x: col2, y: row5, width: width, height: height)
+        let r5c3 = CGRect(x: col3, y: row5, width: width, height: height)
+        let r5c4 = CGRect(x: col4, y: row5, width: width, height: height)
+        //row6
+        let r6c1 = CGRect(x: col1, y: row6, width: width, height: height)
+        let r6c2 = CGRect(x: col2, y: row6, width: width, height: height)
+        let r6c3 = CGRect(x: col3, y: row6, width: width, height: height)
+        let r6c4 = CGRect(x: col4, y: row6, width: width, height: height)
+        
+        plusSeriesArray.append(r1c1)
+        plusSeriesArray.append(r1c2)
+        plusSeriesArray.append(r1c3)
+        plusSeriesArray.append(r1c4)
+        plusSeriesArray.append(r2c1)
+        plusSeriesArray.append(r2c2)
+        plusSeriesArray.append(r2c3)
+        plusSeriesArray.append(r2c4)
+        plusSeriesArray.append(r3c1)
+        plusSeriesArray.append(r3c2)
+        plusSeriesArray.append(r3c3)
+        plusSeriesArray.append(r3c4)
+        plusSeriesArray.append(r4c1)
+        plusSeriesArray.append(r4c2)
+        plusSeriesArray.append(r4c3)
+        plusSeriesArray.append(r4c4)
+        plusSeriesArray.append(r5c1)
+        plusSeriesArray.append(r5c2)
+        plusSeriesArray.append(r5c3)
+        plusSeriesArray.append(r5c4)
+        plusSeriesArray.append(r6c1)
+        plusSeriesArray.append(r6c2)
+        plusSeriesArray.append(r6c3)
+        plusSeriesArray.append(r6c4)
+        
+        return plusSeriesArray
+    }
+    
+    func xandxsSeries() -> [CGRect]
+    {
+        var xSeriesArray: [CGRect] = []
+        
+        let col1 = CGFloat(81)
+        let col2 = CGFloat(342)
+        let col3 = CGFloat(603)
+        let col4 = CGFloat(864)
+        let width = CGFloat(180)
+        
+        let row1 = CGFloat(216)
+        let row2 = CGFloat(522)
+        let row3 = CGFloat(828)
+        let row4 = CGFloat(1134)
+        let row5 = CGFloat(1440)
+        let row6 = CGFloat(1746)
+        let height = CGFloat(180)
+        
+        //row
+        let r1c1 = CGRect(x: col1, y: row1, width: width, height: height)
+        let r1c2 = CGRect(x: col2, y: row1, width: width, height: height)
+        let r1c3 = CGRect(x: col3, y: row1, width: width, height: height)
+        let r1c4 = CGRect(x: col4, y: row1, width: width, height: height)
+        //row2
+        let r2c1 = CGRect(x: col1, y: row2, width: width, height: height)
+        let r2c2 = CGRect(x: col2, y: row2, width: width, height: height)
+        let r2c3 = CGRect(x: col3, y: row2, width: width, height: height)
+        let r2c4 = CGRect(x: col4, y: row2, width: width, height: height)
+        //row3
+        let r3c1 = CGRect(x: col1, y: row3, width: width, height: height)
+        let r3c2 = CGRect(x: col2, y: row3, width: width, height: height)
+        let r3c3 = CGRect(x: col3, y: row3, width: width, height: height)
+        let r3c4 = CGRect(x: col4, y: row3, width: width, height: height)
+        //row4
+        let r4c1 = CGRect(x: col1, y: row4, width: width, height: height)
+        let r4c2 = CGRect(x: col2, y: row4, width: width, height: height)
+        let r4c3 = CGRect(x: col3, y: row4, width: width, height: height)
+        let r4c4 = CGRect(x: col4, y: row4, width: width, height: height)
+        //row5
+        let r5c1 = CGRect(x: col1, y: row5, width: width, height: height)
+        let r5c2 = CGRect(x: col2, y: row5, width: width, height: height)
+        let r5c3 = CGRect(x: col3, y: row5, width: width, height: height)
+        let r5c4 = CGRect(x: col4, y: row5, width: width, height: height)
+        //row6
+        let r6c1 = CGRect(x: col1, y: row6, width: width, height: height)
+        let r6c2 = CGRect(x: col2, y: row6, width: width, height: height)
+        let r6c3 = CGRect(x: col3, y: row6, width: width, height: height)
+        let r6c4 = CGRect(x: col4, y: row6, width: width, height: height)
+        
+        xSeriesArray.append(r1c1)
+        xSeriesArray.append(r1c2)
+        xSeriesArray.append(r1c3)
+        xSeriesArray.append(r1c4)
+        xSeriesArray.append(r2c1)
+        xSeriesArray.append(r2c2)
+        xSeriesArray.append(r2c3)
+        xSeriesArray.append(r2c4)
+        xSeriesArray.append(r3c1)
+        xSeriesArray.append(r3c2)
+        xSeriesArray.append(r3c3)
+        xSeriesArray.append(r3c4)
+        xSeriesArray.append(r4c1)
+        xSeriesArray.append(r4c2)
+        xSeriesArray.append(r4c3)
+        xSeriesArray.append(r4c4)
+        xSeriesArray.append(r5c1)
+        xSeriesArray.append(r5c2)
+        xSeriesArray.append(r5c3)
+        xSeriesArray.append(r5c4)
+        xSeriesArray.append(r6c1)
+        xSeriesArray.append(r6c2)
+        xSeriesArray.append(r6c3)
+        xSeriesArray.append(r6c4)
+        
+        return xSeriesArray
+    }
+    
+    func xr() -> [CGRect]
+    {
+        var xSeriesArray: [CGRect] = []
+        
+        let col1 = CGFloat(64)
+        let col2 = CGFloat(254)
+        let col3 = CGFloat(446)
+        let col4 = CGFloat(636)
+        let width = CGFloat(128)
+        
+        let row1 = CGFloat(156)
+        let row2 = CGFloat(380)
+        let row3 = CGFloat(605)
+        let row4 = CGFloat(830)
+        let row5 = CGFloat(1055)
+        let row6 = CGFloat(1280)
+        let height = CGFloat(128)
+        
+        //row
+        let r1c1 = CGRect(x: col1, y: row1, width: width, height: height)
+        let r1c2 = CGRect(x: col2, y: row1, width: width, height: height)
+        let r1c3 = CGRect(x: col3, y: row1, width: width, height: height)
+        let r1c4 = CGRect(x: col4, y: row1, width: width, height: height)
+        //row2
+        let r2c1 = CGRect(x: col1, y: row2, width: width, height: height)
+        let r2c2 = CGRect(x: col2, y: row2, width: width, height: height)
+        let r2c3 = CGRect(x: col3, y: row2, width: width, height: height)
+        let r2c4 = CGRect(x: col4, y: row2, width: width, height: height)
+        //row3
+        let r3c1 = CGRect(x: col1, y: row3, width: width, height: height)
+        let r3c2 = CGRect(x: col2, y: row3, width: width, height: height)
+        let r3c3 = CGRect(x: col3, y: row3, width: width, height: height)
+        let r3c4 = CGRect(x: col4, y: row3, width: width, height: height)
+        //row4
+        let r4c1 = CGRect(x: col1, y: row4, width: width, height: height)
+        let r4c2 = CGRect(x: col2, y: row4, width: width, height: height)
+        let r4c3 = CGRect(x: col3, y: row4, width: width, height: height)
+        let r4c4 = CGRect(x: col4, y: row4, width: width, height: height)
+        //row5
+        let r5c1 = CGRect(x: col1, y: row5, width: width, height: height)
+        let r5c2 = CGRect(x: col2, y: row5, width: width, height: height)
+        let r5c3 = CGRect(x: col3, y: row5, width: width, height: height)
+        let r5c4 = CGRect(x: col4, y: row5, width: width, height: height)
+        //row6
+        let r6c1 = CGRect(x: col1, y: row6, width: width, height: height)
+        let r6c2 = CGRect(x: col2, y: row6, width: width, height: height)
+        let r6c3 = CGRect(x: col3, y: row6, width: width, height: height)
+        let r6c4 = CGRect(x: col4, y: row6, width: width, height: height)
+        
+        xSeriesArray.append(r1c1)
+        xSeriesArray.append(r1c2)
+        xSeriesArray.append(r1c3)
+        xSeriesArray.append(r1c4)
+        xSeriesArray.append(r2c1)
+        xSeriesArray.append(r2c2)
+        xSeriesArray.append(r2c3)
+        xSeriesArray.append(r2c4)
+        xSeriesArray.append(r3c1)
+        xSeriesArray.append(r3c2)
+        xSeriesArray.append(r3c3)
+        xSeriesArray.append(r3c4)
+        xSeriesArray.append(r4c1)
+        xSeriesArray.append(r4c2)
+        xSeriesArray.append(r4c3)
+        xSeriesArray.append(r4c4)
+        xSeriesArray.append(r5c1)
+        xSeriesArray.append(r5c2)
+        xSeriesArray.append(r5c3)
+        xSeriesArray.append(r5c4)
+        xSeriesArray.append(r6c1)
+        xSeriesArray.append(r6c2)
+        xSeriesArray.append(r6c3)
+        xSeriesArray.append(r6c4)
+        
+        return xSeriesArray
+    }
+    
+    func xsmax() -> [CGRect]
+    {
+        var xSeriesArray: [CGRect] = []
+        
+        let col1 = CGFloat(96)
+        let col2 = CGFloat(382)
+        let col3 = CGFloat(668)
+        let col4 = CGFloat(954)
+        let width = CGFloat(192)
+        
+        let row1 = CGFloat(234)
+        let row2 = CGFloat(571)
+        let row3 = CGFloat(908)
+        let row4 = CGFloat(1245)
+        let row5 = CGFloat(1582)
+        let row6 = CGFloat(1919)
+        let height = CGFloat(192)
+        
+        //row
+        let r1c1 = CGRect(x: col1, y: row1, width: width, height: height)
+        let r1c2 = CGRect(x: col2, y: row1, width: width, height: height)
+        let r1c3 = CGRect(x: col3, y: row1, width: width, height: height)
+        let r1c4 = CGRect(x: col4, y: row1, width: width, height: height)
+        //row2
+        let r2c1 = CGRect(x: col1, y: row2, width: width, height: height)
+        let r2c2 = CGRect(x: col2, y: row2, width: width, height: height)
+        let r2c3 = CGRect(x: col3, y: row2, width: width, height: height)
+        let r2c4 = CGRect(x: col4, y: row2, width: width, height: height)
+        //row3
+        let r3c1 = CGRect(x: col1, y: row3, width: width, height: height)
+        let r3c2 = CGRect(x: col2, y: row3, width: width, height: height)
+        let r3c3 = CGRect(x: col3, y: row3, width: width, height: height)
+        let r3c4 = CGRect(x: col4, y: row3, width: width, height: height)
+        //row4
+        let r4c1 = CGRect(x: col1, y: row4, width: width, height: height)
+        let r4c2 = CGRect(x: col2, y: row4, width: width, height: height)
+        let r4c3 = CGRect(x: col3, y: row4, width: width, height: height)
+        let r4c4 = CGRect(x: col4, y: row4, width: width, height: height)
+        //row5
+        let r5c1 = CGRect(x: col1, y: row5, width: width, height: height)
+        let r5c2 = CGRect(x: col2, y: row5, width: width, height: height)
+        let r5c3 = CGRect(x: col3, y: row5, width: width, height: height)
+        let r5c4 = CGRect(x: col4, y: row5, width: width, height: height)
+        //row6
+        let r6c1 = CGRect(x: col1, y: row6, width: width, height: height)
+        let r6c2 = CGRect(x: col2, y: row6, width: width, height: height)
+        let r6c3 = CGRect(x: col3, y: row6, width: width, height: height)
+        let r6c4 = CGRect(x: col4, y: row6, width: width, height: height)
+        
+        xSeriesArray.append(r1c1)
+        xSeriesArray.append(r1c2)
+        xSeriesArray.append(r1c3)
+        xSeriesArray.append(r1c4)
+        xSeriesArray.append(r2c1)
+        xSeriesArray.append(r2c2)
+        xSeriesArray.append(r2c3)
+        xSeriesArray.append(r2c4)
+        xSeriesArray.append(r3c1)
+        xSeriesArray.append(r3c2)
+        xSeriesArray.append(r3c3)
+        xSeriesArray.append(r3c4)
+        xSeriesArray.append(r4c1)
+        xSeriesArray.append(r4c2)
+        xSeriesArray.append(r4c3)
+        xSeriesArray.append(r4c4)
+        xSeriesArray.append(r5c1)
+        xSeriesArray.append(r5c2)
+        xSeriesArray.append(r5c3)
+        xSeriesArray.append(r5c4)
+        xSeriesArray.append(r6c1)
+        xSeriesArray.append(r6c2)
+        xSeriesArray.append(r6c3)
+        xSeriesArray.append(r6c4)
+        
+        return xSeriesArray
     }
 }
 

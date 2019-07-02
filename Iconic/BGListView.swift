@@ -25,6 +25,7 @@ class BGListView: UIViewController, UINavigationControllerDelegate, UIImagePicke
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(UIDevice.current.name.lowercased())
         
         savedPhotos.loadImages()
         
@@ -82,8 +83,6 @@ class BGListView: UIViewController, UINavigationControllerDelegate, UIImagePicke
         popupBG.isHidden = true
     }
     
-    
-    
     func createHeaderArray() -> [Header]
     {
         var tempArray: [Header] = []
@@ -134,25 +133,98 @@ class BGListView: UIViewController, UINavigationControllerDelegate, UIImagePicke
     {
         var tempArray: [Photo] = []
         
-        let P1 = Photo(image: UIImage(named: "Stock1")!, name: "Stock Background 1")
-        let P2 = Photo(image: UIImage(named: "Stock2")!, name: "Stock Background 2")
-        let P3 = Photo(image: UIImage(named: "Stock3")!, name: "Stock Background 3")
-        let P4 = Photo(image: UIImage(named: "Stock4")!, name: "Stock Background 4")
-        let P5 = Photo(image: UIImage(named: "Stock5")!, name: "Stock Background 5")
-        let P6 = Photo(image: UIImage(named: "Stock6")!, name: "Stock Background 6")
-        let P7 = Photo(image: UIImage(named: "Stock7")!, name: "Stock Background 7")
-        let P8 = Photo(image: UIImage(named: "Stock8")!, name: "Stock Background 8")
-        let P9 = Photo(image: UIImage(named: "Stock9")!, name: "Stock Background 9")
-        let P10 = Photo(image: UIImage(named: "Stock10")!, name: "Stock Background 10")
-        let P11 = Photo(image: UIImage(named: "Stock11")!, name: "Stock Background 11")
-        let P12 = Photo(image: UIImage(named: "Stock12")!, name: "Stock Background 12")
-        let P13 = Photo(image: UIImage(named: "Stock13")!, name: "Stock Background 13")
-        let P14 = Photo(image: UIImage(named: "Stock14")!, name: "Stock Background 14")
-        let P15 = Photo(image: UIImage(named: "Stock15")!, name: "Stock Background 15")
-        let P16 = Photo(image: UIImage(named: "Stock16")!, name: "Stock Background 16")
-        let P17 = Photo(image: UIImage(named: "Stock17")!, name: "Stock Background 17")
-        let P18 = Photo(image: UIImage(named: "Stock18")!, name: "Stock Background 18")
-        let P19 = Photo(image: UIImage(named: "Stock19")!, name: "Stock Background 19")
+        tempArray = getPhotos()
+        
+        protectedIndices = headings.count + solids.count + tempArray.count - 1
+        for P in savedPhotos.photos
+        {
+            tempArray.append(P)
+        }
+        
+        return tempArray
+    }
+    
+    func getPhotos() -> [Photo]
+    {
+        var photoArray: [Photo] = []
+        
+        var device = UIDevice.current.name
+        device = device.lowercased()
+        
+        if(device.firstIndex(of: "x") == nil)
+        {
+            if(device.contains("plus"))
+            {
+                print("plus")
+                photoArray = plusSeries()
+            }
+            else
+            {
+                print("norm")
+                photoArray = standardSeries()
+            }
+        }
+        else
+        {
+            if(device.contains("ʀ"))
+            {
+                print("r")
+                photoArray = xr()
+            }
+            else if(device.contains("max"))
+            {
+                print("max")
+                photoArray = xsmax()
+            }
+            else
+            {
+                print("x/xs")
+                photoArray = xandxsSeries()
+            }
+        }
+        return photoArray
+    }
+    
+    func standardSeries() -> [Photo]
+    {
+        var tempArray: [Photo] = []
+        
+        let P1 = Photo(image: UIImage(named: "Series7No5_1")!, name: "Series 7 No.5")
+        let P2 = Photo(image: UIImage(named: "SevenStarNo1_1")!, name: "Seven Star No.1")
+        let P3 = Photo(image: UIImage(named: "TheLargeFigure_1")!, name: "The Large Figure")
+        let P4 = Photo(image: UIImage(named: "SwanNo1_1")!, name: "Swan No.1")
+        let P5 = Photo(image: UIImage(named: "SwanNo7_1")!, name: "Swan No.7")
+        let P6 = Photo(image: UIImage(named: "SwanNo9_1")!, name: "Swan No.9")
+        let P7 = Photo(image: UIImage(named: "SwanNo10_1")!, name: "Swan No.10")
+        let P8 = Photo(image: UIImage(named: "SwanNo12_1")!, name: "Swan No.12")
+        let P9 = Photo(image: UIImage(named: "SwanNo17_1")!, name: "Swan No.17")
+
+        tempArray.append(P1)
+        tempArray.append(P2)
+        tempArray.append(P3)
+        tempArray.append(P4)
+        tempArray.append(P5)
+        tempArray.append(P6)
+        tempArray.append(P7)
+        tempArray.append(P8)
+        tempArray.append(P9)
+        
+        return tempArray
+    }
+    
+    func plusSeries() -> [Photo]
+    {
+        var tempArray: [Photo] = []
+        
+        let P1 = Photo(image: UIImage(named: "Series7No5_2")!, name: "Series 7 No.5")
+        let P2 = Photo(image: UIImage(named: "SevenStarNo1_2")!, name: "Seven Star No.1")
+        let P3 = Photo(image: UIImage(named: "TheLargeFigure_2")!, name: "The Large Figure")
+        let P4 = Photo(image: UIImage(named: "SwanNo1_2")!, name: "Swan No.1")
+        let P5 = Photo(image: UIImage(named: "SwanNo7_2")!, name: "Swan No.7")
+        let P6 = Photo(image: UIImage(named: "SwanNo9_2")!, name: "Swan No.9")
+        let P7 = Photo(image: UIImage(named: "SwanNo10_2")!, name: "Swan No.10")
+        let P8 = Photo(image: UIImage(named: "SwanNo12_2")!, name: "Swan No.12")
+        let P9 = Photo(image: UIImage(named: "SwanNo17_2")!, name: "Swan No.17")
         
         tempArray.append(P1)
         tempArray.append(P2)
@@ -163,22 +235,87 @@ class BGListView: UIViewController, UINavigationControllerDelegate, UIImagePicke
         tempArray.append(P7)
         tempArray.append(P8)
         tempArray.append(P9)
-        tempArray.append(P10)
-        tempArray.append(P11)
-        tempArray.append(P12)
-        tempArray.append(P13)
-        tempArray.append(P14)
-        tempArray.append(P15)
-        tempArray.append(P16)
-        tempArray.append(P17)
-        tempArray.append(P18)
-        tempArray.append(P19)
         
-        protectedIndices = headings.count + solids.count + tempArray.count - 1
-        for P in savedPhotos.photos
-        {
-            tempArray.append(P)
-        }
+        return tempArray
+    }
+    
+    func xandxsSeries() -> [Photo]
+    {
+        var tempArray: [Photo] = []
+        
+        let P1 = Photo(image: UIImage(named: "Series7No5_3")!, name: "Series 7 No.5")
+        let P2 = Photo(image: UIImage(named: "SevenStarNo1_3")!, name: "Seven Star No.1")
+        let P3 = Photo(image: UIImage(named: "TheLargeFigure_3")!, name: "The Large Figure")
+        let P4 = Photo(image: UIImage(named: "SwanNo1_3")!, name: "Swan No.1")
+        let P5 = Photo(image: UIImage(named: "SwanNo7_3")!, name: "Swan No.7")
+        let P6 = Photo(image: UIImage(named: "SwanNo9_3")!, name: "Swan No.9")
+        let P7 = Photo(image: UIImage(named: "SwanNo10_3")!, name: "Swan No.10")
+        let P8 = Photo(image: UIImage(named: "SwanNo12_3")!, name: "Swan No.12")
+        let P9 = Photo(image: UIImage(named: "SwanNo17_3")!, name: "Swan No.17")
+        
+        tempArray.append(P1)
+        tempArray.append(P2)
+        tempArray.append(P3)
+        tempArray.append(P4)
+        tempArray.append(P5)
+        tempArray.append(P6)
+        tempArray.append(P7)
+        tempArray.append(P8)
+        tempArray.append(P9)
+        
+        return tempArray
+    }
+    
+    func xr() -> [Photo]
+    {
+        var tempArray: [Photo] = []
+        
+        let P1 = Photo(image: UIImage(named: "Series7No5_4")!, name: "Series 7 No.5")
+        let P2 = Photo(image: UIImage(named: "SevenStarNo1_4")!, name: "Seven Star No.1")
+        let P3 = Photo(image: UIImage(named: "TheLargeFigure_4")!, name: "The Large Figure")
+        let P4 = Photo(image: UIImage(named: "SwanNo1_4")!, name: "Swan No.1")
+        let P5 = Photo(image: UIImage(named: "SwanNo7_4")!, name: "Swan No.7")
+        let P6 = Photo(image: UIImage(named: "SwanNo9_4")!, name: "Swan No.9")
+        let P7 = Photo(image: UIImage(named: "SwanNo10_4")!, name: "Swan No.10")
+        let P8 = Photo(image: UIImage(named: "SwanNo12_4")!, name: "Swan No.12")
+        let P9 = Photo(image: UIImage(named: "SwanNo17_4")!, name: "Swan No.17")
+        
+        tempArray.append(P1)
+        tempArray.append(P2)
+        tempArray.append(P3)
+        tempArray.append(P4)
+        tempArray.append(P5)
+        tempArray.append(P6)
+        tempArray.append(P7)
+        tempArray.append(P8)
+        tempArray.append(P9)
+        
+        return tempArray
+    }
+    
+    func xsmax() -> [Photo]
+    {
+        var tempArray: [Photo] = []
+        
+        let P1 = Photo(image: UIImage(named: "Series7No5_5")!, name: "Series 7 No.5")
+        let P2 = Photo(image: UIImage(named: "SevenStarNo1_5")!, name: "Seven Star No.1")
+        let P3 = Photo(image: UIImage(named: "TheLargeFigure_5")!, name: "The Large Figure")
+        let P4 = Photo(image: UIImage(named: "SwanNo1_5")!, name: "Swan No.1")
+        let P5 = Photo(image: UIImage(named: "SwanNo7_5")!, name: "Swan No.7")
+        let P6 = Photo(image: UIImage(named: "SwanNo9_5")!, name: "Swan No.9")
+        let P7 = Photo(image: UIImage(named: "SwanNo10_5")!, name: "Swan No.10")
+        let P8 = Photo(image: UIImage(named: "SwanNo12_5")!, name: "Swan No.12")
+        let P9 = Photo(image: UIImage(named: "SwanNo17_5")!, name: "Swan No.17")
+        
+        tempArray.append(P1)
+        tempArray.append(P2)
+        tempArray.append(P3)
+        tempArray.append(P4)
+        tempArray.append(P5)
+        tempArray.append(P6)
+        tempArray.append(P7)
+        tempArray.append(P8)
+        tempArray.append(P9)
         
         return tempArray
     }
