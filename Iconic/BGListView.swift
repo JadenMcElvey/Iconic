@@ -158,6 +158,11 @@ class BGListView: UIViewController, UINavigationControllerDelegate, UIImagePicke
                 print("plus")
                 photoArray = plusSeries()
             }
+            else if(device.contains("se"))
+            {
+                print("se")
+                photoArray = se()
+            }
             else
             {
                 print("norm")
@@ -306,6 +311,33 @@ class BGListView: UIViewController, UINavigationControllerDelegate, UIImagePicke
         let P7 = Photo(image: UIImage(named: "SwanNo10_5")!, name: "Swan No.10")
         let P8 = Photo(image: UIImage(named: "SwanNo12_5")!, name: "Swan No.12")
         let P9 = Photo(image: UIImage(named: "SwanNo17_5")!, name: "Swan No.17")
+        
+        tempArray.append(P1)
+        tempArray.append(P2)
+        tempArray.append(P3)
+        tempArray.append(P4)
+        tempArray.append(P5)
+        tempArray.append(P6)
+        tempArray.append(P7)
+        tempArray.append(P8)
+        tempArray.append(P9)
+        
+        return tempArray
+    }
+    
+    func se() -> [Photo]
+    {
+        var tempArray: [Photo] = []
+        
+        let P1 = Photo(image: UIImage(named: "Series7No5_6")!, name: "Series 7 No.5")
+        let P2 = Photo(image: UIImage(named: "SevenStarNo1_6")!, name: "Seven Star No.1")
+        let P3 = Photo(image: UIImage(named: "TheLargeFigure_6")!, name: "The Large Figure")
+        let P4 = Photo(image: UIImage(named: "SwanNo1_6")!, name: "Swan No.1")
+        let P5 = Photo(image: UIImage(named: "SwanNo7_6")!, name: "Swan No.7")
+        let P6 = Photo(image: UIImage(named: "SwanNo9_6")!, name: "Swan No.9")
+        let P7 = Photo(image: UIImage(named: "SwanNo10_6")!, name: "Swan No.10")
+        let P8 = Photo(image: UIImage(named: "SwanNo12_6")!, name: "Swan No.12")
+        let P9 = Photo(image: UIImage(named: "SwanNo17_6")!, name: "Swan No.17")
         
         tempArray.append(P1)
         tempArray.append(P2)

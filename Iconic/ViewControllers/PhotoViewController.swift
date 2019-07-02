@@ -22,6 +22,7 @@ class PhotoViewController: UIViewController
         self.preview.image = photoImage!
         
         tiles = createTileArray()
+        print(UIDevice.current.name)
         
         collection.delegate = self
         collection.dataSource = self
@@ -41,55 +42,103 @@ class PhotoViewController: UIViewController
         var cropZones: [CGRect] = getCGRects()
         
         let cgImage = photoImage!.cgImage
-        let crop1 = cgImage!.cropping(to: cropZones[0])
-        let crop2 = cgImage!.cropping(to: cropZones[1])
-        let crop3 = cgImage!.cropping(to: cropZones[2])
-        let crop4 = cgImage!.cropping(to: cropZones[3])
-        let crop5 = cgImage!.cropping(to: cropZones[4])
-        let crop6 = cgImage!.cropping(to: cropZones[5])
-        let crop7 = cgImage!.cropping(to: cropZones[6])
-        let crop8 = cgImage!.cropping(to: cropZones[7])
-        let crop9 = cgImage!.cropping(to: cropZones[8])
-        let crop10 = cgImage!.cropping(to: cropZones[9])
-        let crop11 = cgImage!.cropping(to: cropZones[10])
-        let crop12 = cgImage!.cropping(to: cropZones[11])
-        let crop13 = cgImage!.cropping(to: cropZones[12])
-        let crop14 = cgImage!.cropping(to: cropZones[13])
-        let crop15 = cgImage!.cropping(to: cropZones[14])
-        let crop16 = cgImage!.cropping(to: cropZones[15])
-        let crop17 = cgImage!.cropping(to: cropZones[16])
-        let crop18 = cgImage!.cropping(to: cropZones[17])
-        let crop19 = cgImage!.cropping(to: cropZones[18])
-        let crop20 = cgImage!.cropping(to: cropZones[19])
-        let crop21 = cgImage!.cropping(to: cropZones[20])
-        let crop22 = cgImage!.cropping(to: cropZones[21])
-        let crop23 = cgImage!.cropping(to: cropZones[22])
-        let crop24 = cgImage!.cropping(to: cropZones[23])
         
-        tempArray.append(UIImage(cgImage: crop1!))
-        tempArray.append(UIImage(cgImage: crop2!))
-        tempArray.append(UIImage(cgImage: crop3!))
-        tempArray.append(UIImage(cgImage: crop4!))
-        tempArray.append(UIImage(cgImage: crop5!))
-        tempArray.append(UIImage(cgImage: crop6!))
-        tempArray.append(UIImage(cgImage: crop7!))
-        tempArray.append(UIImage(cgImage: crop8!))
-        tempArray.append(UIImage(cgImage: crop9!))
-        tempArray.append(UIImage(cgImage: crop10!))
-        tempArray.append(UIImage(cgImage: crop11!))
-        tempArray.append(UIImage(cgImage: crop12!))
-        tempArray.append(UIImage(cgImage: crop13!))
-        tempArray.append(UIImage(cgImage: crop14!))
-        tempArray.append(UIImage(cgImage: crop15!))
-        tempArray.append(UIImage(cgImage: crop16!))
-        tempArray.append(UIImage(cgImage: crop17!))
-        tempArray.append(UIImage(cgImage: crop18!))
-        tempArray.append(UIImage(cgImage: crop19!))
-        tempArray.append(UIImage(cgImage: crop20!))
-        tempArray.append(UIImage(cgImage: crop21!))
-        tempArray.append(UIImage(cgImage: crop22!))
-        tempArray.append(UIImage(cgImage: crop23!))
-        tempArray.append(UIImage(cgImage: crop24!))
+        if(UIDevice.current.name.contains("SE"))
+        {
+            let crop1 = cgImage!.cropping(to: cropZones[0])
+            let crop2 = cgImage!.cropping(to: cropZones[1])
+            let crop3 = cgImage!.cropping(to: cropZones[2])
+            let crop4 = cgImage!.cropping(to: cropZones[3])
+            let crop5 = cgImage!.cropping(to: cropZones[4])
+            let crop6 = cgImage!.cropping(to: cropZones[5])
+            let crop7 = cgImage!.cropping(to: cropZones[6])
+            let crop8 = cgImage!.cropping(to: cropZones[7])
+            let crop9 = cgImage!.cropping(to: cropZones[8])
+            let crop10 = cgImage!.cropping(to: cropZones[9])
+            let crop11 = cgImage!.cropping(to: cropZones[10])
+            let crop12 = cgImage!.cropping(to: cropZones[11])
+            let crop13 = cgImage!.cropping(to: cropZones[12])
+            let crop14 = cgImage!.cropping(to: cropZones[13])
+            let crop15 = cgImage!.cropping(to: cropZones[14])
+            let crop16 = cgImage!.cropping(to: cropZones[15])
+            let crop17 = cgImage!.cropping(to: cropZones[16])
+            let crop18 = cgImage!.cropping(to: cropZones[17])
+            let crop19 = cgImage!.cropping(to: cropZones[18])
+            let crop20 = cgImage!.cropping(to: cropZones[19])
+            
+            tempArray.append(UIImage(cgImage: crop1!))
+            tempArray.append(UIImage(cgImage: crop2!))
+            tempArray.append(UIImage(cgImage: crop3!))
+            tempArray.append(UIImage(cgImage: crop4!))
+            tempArray.append(UIImage(cgImage: crop5!))
+            tempArray.append(UIImage(cgImage: crop6!))
+            tempArray.append(UIImage(cgImage: crop7!))
+            tempArray.append(UIImage(cgImage: crop8!))
+            tempArray.append(UIImage(cgImage: crop9!))
+            tempArray.append(UIImage(cgImage: crop10!))
+            tempArray.append(UIImage(cgImage: crop11!))
+            tempArray.append(UIImage(cgImage: crop12!))
+            tempArray.append(UIImage(cgImage: crop13!))
+            tempArray.append(UIImage(cgImage: crop14!))
+            tempArray.append(UIImage(cgImage: crop15!))
+            tempArray.append(UIImage(cgImage: crop16!))
+            tempArray.append(UIImage(cgImage: crop17!))
+            tempArray.append(UIImage(cgImage: crop18!))
+            tempArray.append(UIImage(cgImage: crop19!))
+            tempArray.append(UIImage(cgImage: crop20!))
+        }
+        else
+        {
+            let crop1 = cgImage!.cropping(to: cropZones[0])
+            let crop2 = cgImage!.cropping(to: cropZones[1])
+            let crop3 = cgImage!.cropping(to: cropZones[2])
+            let crop4 = cgImage!.cropping(to: cropZones[3])
+            let crop5 = cgImage!.cropping(to: cropZones[4])
+            let crop6 = cgImage!.cropping(to: cropZones[5])
+            let crop7 = cgImage!.cropping(to: cropZones[6])
+            let crop8 = cgImage!.cropping(to: cropZones[7])
+            let crop9 = cgImage!.cropping(to: cropZones[8])
+            let crop10 = cgImage!.cropping(to: cropZones[9])
+            let crop11 = cgImage!.cropping(to: cropZones[10])
+            let crop12 = cgImage!.cropping(to: cropZones[11])
+            let crop13 = cgImage!.cropping(to: cropZones[12])
+            let crop14 = cgImage!.cropping(to: cropZones[13])
+            let crop15 = cgImage!.cropping(to: cropZones[14])
+            let crop16 = cgImage!.cropping(to: cropZones[15])
+            let crop17 = cgImage!.cropping(to: cropZones[16])
+            let crop18 = cgImage!.cropping(to: cropZones[17])
+            let crop19 = cgImage!.cropping(to: cropZones[18])
+            let crop20 = cgImage!.cropping(to: cropZones[19])
+            let crop21 = cgImage!.cropping(to: cropZones[20])
+            let crop22 = cgImage!.cropping(to: cropZones[21])
+            let crop23 = cgImage!.cropping(to: cropZones[22])
+            let crop24 = cgImage!.cropping(to: cropZones[23])
+            
+            tempArray.append(UIImage(cgImage: crop1!))
+            tempArray.append(UIImage(cgImage: crop2!))
+            tempArray.append(UIImage(cgImage: crop3!))
+            tempArray.append(UIImage(cgImage: crop4!))
+            tempArray.append(UIImage(cgImage: crop5!))
+            tempArray.append(UIImage(cgImage: crop6!))
+            tempArray.append(UIImage(cgImage: crop7!))
+            tempArray.append(UIImage(cgImage: crop8!))
+            tempArray.append(UIImage(cgImage: crop9!))
+            tempArray.append(UIImage(cgImage: crop10!))
+            tempArray.append(UIImage(cgImage: crop11!))
+            tempArray.append(UIImage(cgImage: crop12!))
+            tempArray.append(UIImage(cgImage: crop13!))
+            tempArray.append(UIImage(cgImage: crop14!))
+            tempArray.append(UIImage(cgImage: crop15!))
+            tempArray.append(UIImage(cgImage: crop16!))
+            tempArray.append(UIImage(cgImage: crop17!))
+            tempArray.append(UIImage(cgImage: crop18!))
+            tempArray.append(UIImage(cgImage: crop19!))
+            tempArray.append(UIImage(cgImage: crop20!))
+            tempArray.append(UIImage(cgImage: crop21!))
+            tempArray.append(UIImage(cgImage: crop22!))
+            tempArray.append(UIImage(cgImage: crop23!))
+            tempArray.append(UIImage(cgImage: crop24!))
+        }
         
         return tempArray
     }
@@ -107,6 +156,11 @@ class PhotoViewController: UIViewController
             {
                 print("plus")
                 rectArray = plusSeries()
+            }
+            else if(device.contains("se"))
+            {
+                print("se")
+                rectArray = se()
             }
             else
             {
@@ -520,12 +574,79 @@ class PhotoViewController: UIViewController
         
         return xSeriesArray
     }
+    
+    func se() -> [CGRect]
+    {
+        var seArray: [CGRect] = []
+        
+        let col1 = CGFloat(32)
+        let col2 = CGFloat(184)
+        let col3 = CGFloat(336)
+        let col4 = CGFloat(488)
+        let width = CGFloat(120)
+        
+        let row1 = CGFloat(54)
+        let row2 = CGFloat(230)
+        let row3 = CGFloat(406)
+        let row4 = CGFloat(582)
+        let row5 = CGFloat(758)
+        let height = CGFloat(120)
+        
+        //row
+        let r1c1 = CGRect(x: col1, y: row1, width: width, height: height)
+        let r1c2 = CGRect(x: col2, y: row1, width: width, height: height)
+        let r1c3 = CGRect(x: col3, y: row1, width: width, height: height)
+        let r1c4 = CGRect(x: col4, y: row1, width: width, height: height)
+        //row2
+        let r2c1 = CGRect(x: col1, y: row2, width: width, height: height)
+        let r2c2 = CGRect(x: col2, y: row2, width: width, height: height)
+        let r2c3 = CGRect(x: col3, y: row2, width: width, height: height)
+        let r2c4 = CGRect(x: col4, y: row2, width: width, height: height)
+        //row3
+        let r3c1 = CGRect(x: col1, y: row3, width: width, height: height)
+        let r3c2 = CGRect(x: col2, y: row3, width: width, height: height)
+        let r3c3 = CGRect(x: col3, y: row3, width: width, height: height)
+        let r3c4 = CGRect(x: col4, y: row3, width: width, height: height)
+        //row4
+        let r4c1 = CGRect(x: col1, y: row4, width: width, height: height)
+        let r4c2 = CGRect(x: col2, y: row4, width: width, height: height)
+        let r4c3 = CGRect(x: col3, y: row4, width: width, height: height)
+        let r4c4 = CGRect(x: col4, y: row4, width: width, height: height)
+        //row5
+        let r5c1 = CGRect(x: col1, y: row5, width: width, height: height)
+        let r5c2 = CGRect(x: col2, y: row5, width: width, height: height)
+        let r5c3 = CGRect(x: col3, y: row5, width: width, height: height)
+        let r5c4 = CGRect(x: col4, y: row5, width: width, height: height)
+        
+        seArray.append(r1c1)
+        seArray.append(r1c2)
+        seArray.append(r1c3)
+        seArray.append(r1c4)
+        seArray.append(r2c1)
+        seArray.append(r2c2)
+        seArray.append(r2c3)
+        seArray.append(r2c4)
+        seArray.append(r3c1)
+        seArray.append(r3c2)
+        seArray.append(r3c3)
+        seArray.append(r3c4)
+        seArray.append(r4c1)
+        seArray.append(r4c2)
+        seArray.append(r4c3)
+        seArray.append(r4c4)
+        seArray.append(r5c1)
+        seArray.append(r5c2)
+        seArray.append(r5c3)
+        seArray.append(r5c4)
+        
+        return seArray
+    }
 }
 
 extension PhotoViewController: UICollectionViewDataSource, UICollectionViewDelegate
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 24
+        return tiles.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoTile", for: indexPath) as! PhotoTile
