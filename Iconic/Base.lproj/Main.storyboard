@@ -41,7 +41,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions and Purchases" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3O4-n8-C8L">
-                                                    <rect key="frame" x="20" y="39" width="379" height="21"/>
+                                                    <rect key="frame" x="20" y="39" width="285" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="AhQ-kZ-5je"/>
                                                     </constraints>
@@ -50,7 +50,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Iconic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYP-ar-BAy">
-                                                    <rect key="frame" x="20" y="10" width="374" height="24"/>
+                                                    <rect key="frame" x="20" y="10" width="280" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="aVl-Nk-UYb"/>
                                                     </constraints>
@@ -88,7 +88,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1PT-ei-L9e">
-                                                    <rect key="frame" x="75" y="10" width="304" height="24"/>
+                                                    <rect key="frame" x="75" y="10" width="210" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="XPO-28-BIg"/>
                                                     </constraints>
@@ -126,7 +126,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2uY-lX-EmZ" userLabel="Photo Label">
-                                                    <rect key="frame" x="75" y="10" width="286" height="24"/>
+                                                    <rect key="frame" x="75" y="10" width="192" height="24"/>
                                                     <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -256,10 +256,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="FXA-Pz-gs8" userLabel="Question Stack">
-                                <rect key="frame" x="30" y="124" width="260" height="275"/>
+                                <rect key="frame" x="30" y="124" width="260" height="264"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6vU-d0-iLp">
-                                        <rect key="frame" x="0.0" y="0.0" width="260" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="260" height="28"/>
                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="15"/>
                                         <state key="normal" title="How to add solid color to Home Screen?"/>
                                         <connections>
@@ -267,7 +267,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gxr-T1-xFA">
-                                        <rect key="frame" x="0.0" y="49" width="260" height="30"/>
+                                        <rect key="frame" x="0.0" y="47" width="260" height="28.5"/>
                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="15"/>
                                         <state key="normal" title="How to add photo tile to Home Screen?"/>
                                         <connections>
@@ -275,7 +275,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbF-nW-qIk">
-                                        <rect key="frame" x="0.0" y="98" width="260" height="30"/>
+                                        <rect key="frame" x="0.0" y="94.5" width="260" height="28"/>
                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="15"/>
                                         <state key="normal" title="How to move icons on home screen?"/>
                                         <connections>
@@ -283,7 +283,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgA-bU-SmA">
-                                        <rect key="frame" x="0.0" y="147" width="260" height="30"/>
+                                        <rect key="frame" x="0.0" y="141.5" width="260" height="28"/>
                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="15"/>
                                         <state key="normal" title="How to set home screen background?"/>
                                         <connections>
@@ -291,7 +291,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kaq-Fl-8CQ">
-                                        <rect key="frame" x="0.0" y="196" width="260" height="30"/>
+                                        <rect key="frame" x="0.0" y="188.5" width="260" height="28.5"/>
                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="15"/>
                                         <state key="normal" title="How to use a custom background?"/>
                                         <connections>
@@ -299,7 +299,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JdT-We-ji5">
-                                        <rect key="frame" x="0.0" y="245" width="260" height="30"/>
+                                        <rect key="frame" x="0.0" y="236" width="260" height="28"/>
                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="15"/>
                                         <state key="normal" title="What are the included backgrounds?"/>
                                         <connections>
@@ -310,22 +310,24 @@
                                 <constraints>
                                     <constraint firstItem="wbF-nW-qIk" firstAttribute="height" secondItem="6vU-d0-iLp" secondAttribute="height" id="ZiY-g3-kEo"/>
                                     <constraint firstItem="JdT-We-ji5" firstAttribute="height" secondItem="6vU-d0-iLp" secondAttribute="height" id="ccB-Kw-OmO"/>
-                                    <constraint firstAttribute="height" constant="250" id="eNU-l8-3z1"/>
                                     <constraint firstItem="dgA-bU-SmA" firstAttribute="height" secondItem="6vU-d0-iLp" secondAttribute="height" id="fDd-Dc-FXd"/>
                                     <constraint firstItem="kaq-Fl-8CQ" firstAttribute="height" secondItem="6vU-d0-iLp" secondAttribute="height" id="mQX-Y5-T2m"/>
                                     <constraint firstItem="Gxr-T1-xFA" firstAttribute="height" secondItem="6vU-d0-iLp" secondAttribute="height" id="qbL-a8-Sdc"/>
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="q6Y-Ko-Ctc" userLabel="Purchase Stack">
-                                <rect key="frame" x="19" y="439" width="282" height="102"/>
+                                <rect key="frame" x="19" y="428" width="282" height="102"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-10" translatesAutoresizingMaskIntoConstraints="NO" id="Kkx-Ws-uLy" userLabel="Sale1">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-10" translatesAutoresizingMaskIntoConstraints="NO" id="Kkx-Ws-uLy" userLabel="Sale0">
                                         <rect key="frame" x="0.0" y="0.0" width="282" height="43.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNe-sp-xjg">
                                                 <rect key="frame" x="0.0" y="0.0" width="282" height="33"/>
                                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                                 <state key="normal" title="Enable Custom Backgrounds $0.99"/>
+                                                <connections>
+                                                    <action selector="buyEnableCustomWallpapersTapped:" destination="gFa-0Z-r8L" eventType="touchUpInside" id="UPi-5e-vYG"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Import your own background!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lyr-eq-3ET">
                                                 <rect key="frame" x="0.0" y="23" width="282" height="20.5"/>
@@ -335,13 +337,16 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-10" translatesAutoresizingMaskIntoConstraints="NO" id="M73-rv-pOQ" userLabel="Sale2">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-10" translatesAutoresizingMaskIntoConstraints="NO" id="M73-rv-pOQ" userLabel="Restoration">
                                         <rect key="frame" x="0.0" y="58.5" width="282" height="43.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEY-LX-i7y">
                                                 <rect key="frame" x="0.0" y="0.0" width="282" height="33"/>
                                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                                 <state key="normal" title="Restore Purchases"/>
+                                                <connections>
+                                                    <action selector="restorePurchases:" destination="gFa-0Z-r8L" eventType="touchUpInside" id="6Jo-W8-hGu"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reinstate old purchases" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3k-wj-0ji">
                                                 <rect key="frame" x="0.0" y="23" width="282" height="20.5"/>
@@ -354,7 +359,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchases" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjW-LC-TVu">
-                                <rect key="frame" x="109.5" y="409" width="101" height="20"/>
+                                <rect key="frame" x="109.5" y="398" width="101" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="971-7E-dZ0"/>
                                 </constraints>
@@ -386,6 +391,7 @@
                         <outlet property="button4" destination="dgA-bU-SmA" id="ash-mA-zRY"/>
                         <outlet property="button5" destination="kaq-Fl-8CQ" id="lb0-sq-4Lm"/>
                         <outlet property="button6" destination="JdT-We-ji5" id="Mqt-Eb-Xj9"/>
+                        <outlet property="enableCustomBackgroundButton" destination="hNe-sp-xjg" id="rmO-Dd-OS0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P7g-cs-82a" userLabel="First Responder" sceneMemberID="firstResponder"/>

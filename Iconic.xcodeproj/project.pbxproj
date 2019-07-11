@@ -31,6 +31,7 @@
 		DA9742A722B055A8008D9221 /* GlobalVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9742A622B055A8008D9221 /* GlobalVars.swift */; };
 		DACA277F22BC63EA00CEBC15 /* SavingPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACA277E22BC63EA00CEBC15 /* SavingPhoto.swift */; };
 		DAF9DE3022CEAA1900B1DE88 /* InfoScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF9DE2F22CEAA1900B1DE88 /* InfoScreenViewController.swift */; };
+		DAF9DE3222CEB25E00B1DE88 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF9DE3122CEB25E00B1DE88 /* StoreKit.framework */; };
 		DF3938187795DA84F9439DDD /* Pods_Iconic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAAB6623DFC53C84B3FCB2A0 /* Pods_Iconic.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,7 +63,8 @@
 		DA9742A422B05583008D9221 /* WebServerAbstraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServerAbstraction.swift; sourceTree = "<group>"; };
 		DA9742A622B055A8008D9221 /* GlobalVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVars.swift; sourceTree = "<group>"; };
 		DACA277E22BC63EA00CEBC15 /* SavingPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingPhoto.swift; sourceTree = "<group>"; };
-		DAF9DE2F22CEAA1900B1DE88 /* InfoScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InfoScreenViewController.swift; path = ViewControllers/InfoScreenViewController.swift; sourceTree = "<group>"; };
+		DAF9DE2F22CEAA1900B1DE88 /* InfoScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoScreenViewController.swift; sourceTree = "<group>"; };
+		DAF9DE3122CEB25E00B1DE88 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		E73578416C258EAB25F76DAB /* Pods-Iconic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Iconic.release.xcconfig"; path = "Target Support Files/Pods-Iconic/Pods-Iconic.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +74,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF3938187795DA84F9439DDD /* Pods_Iconic.framework in Frameworks */,
+				DAF9DE3222CEB25E00B1DE88 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +84,7 @@
 		AB4E02458C4F6F898B769946 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DAF9DE3122CEB25E00B1DE88 /* StoreKit.framework */,
 				CAAB6623DFC53C84B3FCB2A0 /* Pods_Iconic.framework */,
 			);
 			name = Frameworks;
@@ -100,6 +104,7 @@
 			children = (
 				DA7D735D22B35F0800E5254B /* SolidColorViewController.swift */,
 				DA7D735F22B35F1B00E5254B /* PhotoViewController.swift */,
+				DAF9DE2F22CEAA1900B1DE88 /* InfoScreenViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -141,7 +146,6 @@
 				DA97427122AD810C008D9221 /* AppDelegate.swift */,
 				DA97427322AD810C008D9221 /* BGListView.swift */,
 				DA97427522AD810C008D9221 /* Main.storyboard */,
-				DAF9DE2F22CEAA1900B1DE88 /* InfoScreenViewController.swift */,
 				DA97427822AD811D008D9221 /* Assets.xcassets */,
 				DA97427A22AD811D008D9221 /* LaunchScreen.storyboard */,
 				DA97427D22AD811D008D9221 /* Info.plist */,
@@ -251,6 +255,11 @@
 				TargetAttributes = {
 					DA97426D22AD810C008D9221 = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
