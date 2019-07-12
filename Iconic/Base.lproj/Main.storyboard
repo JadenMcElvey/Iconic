@@ -41,7 +41,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions and Purchases" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3O4-n8-C8L">
-                                                    <rect key="frame" x="20" y="39" width="285" height="21"/>
+                                                    <rect key="frame" x="20" y="39" width="340" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="AhQ-kZ-5je"/>
                                                     </constraints>
@@ -50,7 +50,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Iconic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYP-ar-BAy">
-                                                    <rect key="frame" x="20" y="10" width="280" height="24"/>
+                                                    <rect key="frame" x="20" y="10" width="335" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="aVl-Nk-UYb"/>
                                                     </constraints>
@@ -88,7 +88,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1PT-ei-L9e">
-                                                    <rect key="frame" x="75" y="10" width="210" height="24"/>
+                                                    <rect key="frame" x="75" y="10" width="265" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="XPO-28-BIg"/>
                                                     </constraints>
@@ -126,7 +126,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2uY-lX-EmZ" userLabel="Photo Label">
-                                                    <rect key="frame" x="75" y="10" width="192" height="24"/>
+                                                    <rect key="frame" x="75" y="10" width="247" height="24"/>
                                                     <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -405,13 +405,43 @@
                     <view key="view" contentMode="scaleToFill" id="LGq-ov-iSp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="natural" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayO-FC-lkB" userLabel="Instructions">
+                                <rect key="frame" x="16" y="114" width="288" height="454"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Step 1. From the Main Screen tap on the color you wish to add to your home screen
+
+Step 2. Tap add to Home Screen
+
+Step 3. Follow the on screen instructions in Safari</string>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Add Color to Home Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoG-Ei-Is7">
+                                <rect key="frame" x="32" y="64" width="256" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="aRe-GV-Bae"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ayO-FC-lkB" firstAttribute="leading" secondItem="Vnc-bf-1Bv" secondAttribute="leading" constant="16" id="0IC-vN-xBk"/>
+                            <constraint firstItem="ayO-FC-lkB" firstAttribute="top" secondItem="eoG-Ei-Is7" secondAttribute="bottom" id="JgA-eh-k1u"/>
+                            <constraint firstItem="eoG-Ei-Is7" firstAttribute="top" secondItem="Vnc-bf-1Bv" secondAttribute="top" id="Ntd-Tj-mzF"/>
+                            <constraint firstItem="eoG-Ei-Is7" firstAttribute="centerX" secondItem="LGq-ov-iSp" secondAttribute="centerX" id="Pwk-2M-aMb"/>
+                            <constraint firstItem="ayO-FC-lkB" firstAttribute="bottom" secondItem="Vnc-bf-1Bv" secondAttribute="bottom" id="ZCF-IO-Efv"/>
+                            <constraint firstItem="Vnc-bf-1Bv" firstAttribute="trailing" secondItem="ayO-FC-lkB" secondAttribute="trailing" constant="16" id="faU-0L-9VW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Vnc-bf-1Bv"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eYd-Oh-0m4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2640" y="-862"/>
+            <point key="canvasLocation" x="2639.1999999999998" y="-862.21889055472275"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="iNl-e9-uwi">
@@ -420,13 +450,43 @@
                     <view key="view" contentMode="scaleToFill" id="Xiw-5F-HhP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="natural" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwl-mJ-8nC" userLabel="Instructions">
+                                <rect key="frame" x="16" y="114" width="288" height="454"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Step 1. From the Main Screen tap on the background you wish to add to your home screen.
+
+Step 2. Tap the photo tile you wish to add to your screen
+
+Step 3. Follow the on screen instructions in Safari</string>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Add Photo Tile to Home Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="upH-9u-mKc">
+                                <rect key="frame" x="9.5" y="64" width="301" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="hVe-JI-6XV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="upH-9u-mKc" firstAttribute="centerX" secondItem="Xiw-5F-HhP" secondAttribute="centerX" id="6oD-6T-TxY"/>
+                            <constraint firstItem="cwl-mJ-8nC" firstAttribute="top" secondItem="upH-9u-mKc" secondAttribute="bottom" id="SSv-rt-cx8"/>
+                            <constraint firstItem="cwl-mJ-8nC" firstAttribute="leading" secondItem="mVv-dV-7io" secondAttribute="leading" constant="16" id="Y02-68-L3n"/>
+                            <constraint firstItem="upH-9u-mKc" firstAttribute="top" secondItem="mVv-dV-7io" secondAttribute="top" id="fcD-wK-CUy"/>
+                            <constraint firstItem="mVv-dV-7io" firstAttribute="trailing" secondItem="cwl-mJ-8nC" secondAttribute="trailing" constant="16" id="mHX-Gt-7Gs"/>
+                            <constraint firstItem="cwl-mJ-8nC" firstAttribute="bottom" secondItem="mVv-dV-7io" secondAttribute="bottom" id="oim-wR-9jH"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="mVv-dV-7io"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RZD-Zh-b6z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3495" y="-863"/>
+            <point key="canvasLocation" x="3493.5999999999999" y="-863.1184407796103"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="wtf-9P-emG">
@@ -435,13 +495,43 @@
                     <view key="view" contentMode="scaleToFill" id="TtT-Zq-6gX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="natural" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOR-xs-TKG" userLabel="Instructions">
+                                <rect key="frame" x="16" y="114" width="288" height="454"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Step 1. From the Home Screen tap and hold on any icon until the apps begin to wiggle
+
+Step 2. Drag the icons into the desired location</string>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="How to Move Homescreen Icons" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rkr-LL-ssR">
+                                <rect key="frame" x="20.5" y="64" width="279" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="PNi-4p-UC1"/>
+                                    <constraint firstAttribute="height" constant="50" id="jmM-e5-vEx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QOR-xs-TKG" firstAttribute="top" secondItem="rkr-LL-ssR" secondAttribute="bottom" id="3JF-Gp-955"/>
+                            <constraint firstItem="GE1-ut-r5Y" firstAttribute="trailing" secondItem="QOR-xs-TKG" secondAttribute="trailing" constant="16" id="AEu-DP-oqM"/>
+                            <constraint firstItem="QOR-xs-TKG" firstAttribute="top" secondItem="rkr-LL-ssR" secondAttribute="bottom" id="DX8-wk-EwK"/>
+                            <constraint firstItem="rkr-LL-ssR" firstAttribute="top" secondItem="GE1-ut-r5Y" secondAttribute="top" id="MPm-fX-ibr"/>
+                            <constraint firstItem="rkr-LL-ssR" firstAttribute="centerX" secondItem="TtT-Zq-6gX" secondAttribute="centerX" id="RoH-VF-MNo"/>
+                            <constraint firstItem="QOR-xs-TKG" firstAttribute="leading" secondItem="GE1-ut-r5Y" secondAttribute="leading" constant="16" id="ZlT-9k-wzD"/>
+                            <constraint firstItem="QOR-xs-TKG" firstAttribute="bottom" secondItem="GE1-ut-r5Y" secondAttribute="bottom" id="x3Y-JH-lri"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="GE1-ut-r5Y"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m8t-Bt-FQj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4339" y="-862"/>
+            <point key="canvasLocation" x="4338.3999999999996" y="-862.21889055472275"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="6jG-lH-ett">
@@ -450,13 +540,53 @@
                     <view key="view" contentMode="scaleToFill" id="IxK-BF-hGd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="How to Set Home Screen Background" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Zd-x0-cYG">
+                                <rect key="frame" x="15.5" y="64" width="289.5" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="QgU-BP-O40"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="natural" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5G-T8-CUM" userLabel="Instructions">
+                                <rect key="frame" x="16" y="114" width="288" height="454"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Step 1. Choose a background from the Main Screen
+
+Step 2. Tap the Save button in the top right corner
+
+Step 3. Open the Photos app and select the photo
+
+Step 4.  Tap the share button
+
+Step 5. Tap the button that says "Use as Wallpaper"
+
+Step 6. Pinch the corners of the wallpaper toward the center
+
+Step 7. Tap "Still"
+
+Step 8. Tap "Set"</string>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Zd-x0-cYG" firstAttribute="top" secondItem="xHl-gV-t3f" secondAttribute="top" id="4xe-fa-dbR"/>
+                            <constraint firstItem="i5G-T8-CUM" firstAttribute="bottom" secondItem="xHl-gV-t3f" secondAttribute="bottom" id="8u6-x5-58A"/>
+                            <constraint firstItem="i5G-T8-CUM" firstAttribute="leading" secondItem="xHl-gV-t3f" secondAttribute="leading" constant="16" id="IGx-BY-dYm"/>
+                            <constraint firstItem="6Zd-x0-cYG" firstAttribute="centerX" secondItem="IxK-BF-hGd" secondAttribute="centerX" id="S2k-ry-IeQ"/>
+                            <constraint firstItem="xHl-gV-t3f" firstAttribute="trailing" secondItem="i5G-T8-CUM" secondAttribute="trailing" constant="16" id="aMC-Bg-wQz"/>
+                            <constraint firstItem="i5G-T8-CUM" firstAttribute="top" secondItem="6Zd-x0-cYG" secondAttribute="bottom" id="l5J-Ba-VIh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="xHl-gV-t3f"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ba5-RM-aaV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5162" y="-863"/>
+            <point key="canvasLocation" x="5160.8000000000002" y="-863.1184407796103"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="bBQ-4h-3t2">
@@ -465,13 +595,52 @@
                     <view key="view" contentMode="scaleToFill" id="bFd-xk-iTt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="How to Add a Custom Background" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJ3-rk-F6T">
+                                <rect key="frame" x="11.5" y="64" width="297" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="YeS-m5-zzm"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="jPo-vj-Sin"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="natural" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0v-rz-BKh" userLabel="Instructions">
+                                <rect key="frame" x="16" y="114" width="288" height="454"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <mutableString key="text">Step 1. From the Home Screen tap and hold on any icon until the apps begin to wiggle
+
+Step 2. Swipe from right to left until you see a screen with no app icons
+
+Step 3. Take a screenshot by pressing the home button and power button at the same time(For iPhone X, XR, XS, and XS Max press the power button and volume up button instead)
+
+Step 4. From the purchases screen tap "Enable Custom Backgrounds $0.99"(requires purchase)
+
+Step 5. Fill in information and confirm the purchase
+
+Step 6. Tap the Add button in the top right of the Main Screen
+
+Step 7. Select the screenshot of the background</mutableString>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="YJ3-rk-F6T" firstAttribute="top" secondItem="f41-7C-pxh" secondAttribute="top" id="AAJ-uY-NLy"/>
+                            <constraint firstItem="YJ3-rk-F6T" firstAttribute="centerX" secondItem="bFd-xk-iTt" secondAttribute="centerX" id="B3E-pX-jxL"/>
+                            <constraint firstItem="f41-7C-pxh" firstAttribute="trailing" secondItem="w0v-rz-BKh" secondAttribute="trailing" constant="16" id="HmV-Pk-o4M"/>
+                            <constraint firstItem="w0v-rz-BKh" firstAttribute="leading" secondItem="f41-7C-pxh" secondAttribute="leading" constant="16" id="Lpm-Qc-UuE"/>
+                            <constraint firstItem="w0v-rz-BKh" firstAttribute="bottom" secondItem="f41-7C-pxh" secondAttribute="bottom" id="MtK-mc-9f8"/>
+                            <constraint firstItem="w0v-rz-BKh" firstAttribute="top" secondItem="YJ3-rk-F6T" secondAttribute="bottom" id="yZA-hR-cxL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="f41-7C-pxh"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DZ6-HJ-jQG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6006" y="-863"/>
+            <point key="canvasLocation" x="6005.6000000000004" y="-863.1184407796103"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="wjN-3F-on0">
@@ -480,13 +649,40 @@
                     <view key="view" contentMode="scaleToFill" id="0Ps-EQ-KWd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="What are the Included Backgrounds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVh-x5-dTi">
+                                <rect key="frame" x="5" y="64" width="310" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="afs-ep-End"/>
+                                    <constraint firstAttribute="height" constant="50" id="wGB-pJ-ODf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="natural" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eqf-fS-khk" userLabel="Instructions">
+                                <rect key="frame" x="16" y="114" width="288" height="454"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">The included backgrounds are slightly modified versions of paintings by Hilma af Klint. HIlma af Klint was the world's first abstract artist. Most of these paintings were made around 1915.</string>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="YVh-x5-dTi" firstAttribute="centerX" secondItem="0Ps-EQ-KWd" secondAttribute="centerX" id="EDV-kr-SyZ"/>
+                            <constraint firstItem="Eqf-fS-khk" firstAttribute="top" secondItem="YVh-x5-dTi" secondAttribute="bottom" id="Wfd-pF-Bxh"/>
+                            <constraint firstItem="S26-7Z-fwr" firstAttribute="trailing" secondItem="Eqf-fS-khk" secondAttribute="trailing" constant="16" id="cYw-5s-M7p"/>
+                            <constraint firstItem="YVh-x5-dTi" firstAttribute="top" secondItem="S26-7Z-fwr" secondAttribute="top" id="sYO-ly-jaj"/>
+                            <constraint firstItem="Eqf-fS-khk" firstAttribute="leading" secondItem="S26-7Z-fwr" secondAttribute="leading" constant="16" id="wls-MV-ARH"/>
+                            <constraint firstItem="Eqf-fS-khk" firstAttribute="bottom" secondItem="S26-7Z-fwr" secondAttribute="bottom" id="xz8-dt-uH8"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="S26-7Z-fwr"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aew-aN-O3Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6844" y="-863"/>
+            <point key="canvasLocation" x="6844" y="-863.1184407796103"/>
         </scene>
         <!--ColorName-->
         <scene sceneID="HEQ-ck-BVv">
