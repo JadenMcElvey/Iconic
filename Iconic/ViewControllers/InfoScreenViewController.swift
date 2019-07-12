@@ -75,6 +75,10 @@ class InfoScreenViewController: UIViewController, SKProductsRequestDelegate, SKP
         self.transactionInProgress = true
     }
     
+    func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
+        transactionInProgress = false
+    }
+    
     func requestProductInfo() {
         if SKPaymentQueue.canMakePayments() {
             let productIdentifiers = NSSet(array: productIDs)
@@ -117,9 +121,7 @@ class InfoScreenViewController: UIViewController, SKProductsRequestDelegate, SKP
             self.transactionInProgress = true
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) { (action) -> Void in
-            
-        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) { (action) -> Void in}
         
         actionSheetController.addAction(buyAction)
         actionSheetController.addAction(cancelAction)

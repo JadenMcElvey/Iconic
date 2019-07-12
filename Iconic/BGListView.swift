@@ -50,13 +50,27 @@ class BGListView: UIViewController, UINavigationControllerDelegate, UIImagePicke
 
     @IBAction func addImage(_ sender: Any)
     {
-        let picker = UIImagePickerController()
-        picker.delegate = self
+        print("dumb")
+        if UserDefaults.standard.bool(forKey: "CustomBGEnabled")
+        {
+            let picker = UIImagePickerController()
+            picker.delegate = self
+            
+            picker.sourceType = UIImagePickerController.SourceType.photoLibrary
+            picker.allowsEditing = false
+            
+            self.present(picker, animated: true)
+        }
+        else
+        {
+            let actionSheetController = UIAlertController(title: "Requires In App Purchase", message: "See purchases scene to enable", preferredStyle: UIAlertController.Style.actionSheet)
+            let cancelAction = UIAlertAction(title: "Close", style: UIAlertAction.Style.cancel) { (action) -> Void in}
+            
+            actionSheetController.addAction(cancelAction)
+            
+            present(actionSheetController, animated: true, completion: nil)
+        }
         
-        picker.sourceType = UIImagePickerController.SourceType.photoLibrary
-        picker.allowsEditing = false
-        
-        self.present(picker, animated: true)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any])
