@@ -50,7 +50,7 @@ class BGListView: UIViewController, UINavigationControllerDelegate, UIImagePicke
 
     @IBAction func addImage(_ sender: Any)
     {
-        print("dumb")
+        print("Image Addition Pressed")
         if UserDefaults.standard.bool(forKey: "CustomBGEnabled")
         {
             let picker = UIImagePickerController()
@@ -77,15 +77,90 @@ class BGListView: UIViewController, UINavigationControllerDelegate, UIImagePicke
     {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         {
-            tempImage = image
-            popupBG.isHidden = false
+            self.dismiss(animated: true, completion: nil)
+            if verifyImageSize(img: image)
+            {
+                tempImage = image
+                popupBG.isHidden = false
+            }
+            else
+            {
+                print("invalid image size")
+                let actionSheetController = UIAlertController(title: "Invalid Image Size", message: "Please import a screenshot instead", preferredStyle: UIAlertController.Style.actionSheet)
+                let cancelAction = UIAlertAction(title: "Close", style: UIAlertAction.Style.cancel) { (action) -> Void in}
+                
+                actionSheetController.addAction(cancelAction)
+            
+                self.present(actionSheetController, animated: true, completion: nil)
+            }
         }
         else
         {
+            self.dismiss(animated: true, completion: nil)
             print("error")
         }
-        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func verifyImageSize(img: UIImage) -> Bool
+    {
+        var device = UIDevice.current.name
+        device = device.lowercased()
         
+        if(device.firstIndex(of: "x") == nil)
+        {
+            if(device.contains("plus"))
+            {
+                if(img.size.height == 1920 && img.size.width == 1080)
+                {
+                    print("plus")
+                    return true
+                }
+            }
+            else if(device.contains("se"))
+            {
+                if(img.size.height == 1136 && img.size.width == 640)
+                {
+                    print("se")
+                    return true
+                }
+            }
+            else
+            {
+                if(img.size.height == 1334 && img.size.width == 750)
+                {
+                    print("norm")
+                    return true
+                }
+            }
+        }
+        else
+        {
+            if(device.contains("ʀ"))
+            {
+                if(img.size.height == 1792 && img.size.width == 828)
+                {
+                    print("r")
+                    return true
+                }
+            }
+            else if(device.contains("max"))
+            {
+                if(img.size.height == 2688 && img.size.width == 1242)
+                {
+                    print("max")
+                    return true
+                }
+            }
+            else
+            {
+                if(img.size.height == 2436 && img.size.width == 1125)
+                {
+                    print("x/xs")
+                    return true
+                }
+            }
+        }
+        return false
     }
     
     @IBAction func addImageName(_ sender: Any)
