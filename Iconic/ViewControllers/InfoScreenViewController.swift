@@ -94,12 +94,12 @@ class InfoScreenViewController: UIViewController, SKProductsRequestDelegate, SKP
     
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse)
     {
-        print("aaaaaaaaaaaaa")
+        print("requesting products")
         if response.products.count != 0 {
             for product in response.products
             {
                 productsArray.append(product)
-                print("added")
+                print("products appended")
             }
         }
         if response.invalidProductIdentifiers.count != 0

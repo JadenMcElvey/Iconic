@@ -97,7 +97,7 @@ class BGListView: UIViewController, UINavigationControllerDelegate, UIImagePicke
         else
         {
             self.dismiss(animated: true, completion: nil)
-            print("error")
+            print("image import error")
         }
     }
     
