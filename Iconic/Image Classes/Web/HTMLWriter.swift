@@ -62,8 +62,25 @@ class HTMLWriter
         return HTMLString.replacingOccurrences(of: "homeScreenImage", with: encodedImage)
     }
     
+    func ServerReady(img: UIImage)
+    {
+        print("set")
+        wserver.setHTML(siteHTML: makeHTMLString(image: img))
+        print("start")
+        wserver.start()
+        port += 1
+    }
+    
+    // ***********************************
+    // DEPRACATED
+    // ***********************************
+    // PROBLEMS USING LOCAL URL NOW USING MEMBER .serverURL
+    // USE ServerReady() INSTEAD
+    // ***********************************
+    /*
     func ServerReadyAndMakeBaseURL(img: UIImage) -> String
     {
+        
         //web server stuff
         print("set")
         wserver.setHTML(siteHTML: makeHTMLString(image: img))
@@ -77,4 +94,5 @@ class HTMLWriter
         port += 1
         return urlString
     }
+    */
 }

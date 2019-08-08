@@ -23,8 +23,9 @@ class SolidColorViewController: UIViewController
     
     @IBAction func AddToHomeScreen(_ sender: Any)
     {
-        let urlString = hWrite.ServerReadyAndMakeBaseURL(img: preview.image!)
-        UIApplication.shared.open(URL(string: urlString)!)
+        hWrite.ServerReady(img: preview.image!)
+        let urlString = hWrite.wserver.webServer.serverURL
+        UIApplication.shared.open(urlString!, options: [:], completionHandler: nil)
     }
     
     /*

@@ -660,8 +660,9 @@ extension PhotoViewController: UICollectionViewDataSource, UICollectionViewDeleg
     {
         let selectedCell = self.collectionView(self.collection, cellForItemAt: indexPath)
         let cell = selectedCell as! PhotoTile
-        let urlString = hWrite.ServerReadyAndMakeBaseURL(img: cell.image.image!)
-        UIApplication.shared.open(URL(string: urlString)!)
+        hWrite.ServerReady(img: cell.image.image!)
+        let urlString = hWrite.wserver.webServer.serverURL
+        UIApplication.shared.open(urlString!, options: [:], completionHandler: nil)
         print(indexPath.item)
     }
 }
